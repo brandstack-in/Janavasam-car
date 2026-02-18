@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     parameters {
-        string(name: 'BRANCH_NAME', defaultValue: 'main', description: 'Git Branch to Deploy')
+        choice(name: 'BRANCH_NAME',  choices: [ 'main', 'develop'], description: 'Git Branch to Deploy')
         choice(name: 'ENVIRONMENT', choices: ['DEV', 'TEST', 'PROD'], description: 'Select Environment')
         string(name: 'DEPLOY_PATH', defaultValue: '/var/www/html', description: 'Deployment Path')
         booleanParam(name: 'RESTART_APACHE', defaultValue: true, description: 'Restart Apache After Deploy?')
