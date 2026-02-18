@@ -34,7 +34,7 @@ pipeline {
                 expression { params.RESTART_APACHE }
             }
             steps {
-                sh "systemctl restart apache2"
+                sh "echo restart" 
             }
         }
     }
